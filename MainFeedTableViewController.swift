@@ -27,7 +27,6 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
     
     override func viewDidAppear(animated: Bool) {
         
-        
         var navigationBar = UINavigationBar.self
         
         println(PFUser.currentUser()?.email)
@@ -101,6 +100,8 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
         cell.profilePicImageView.layer.cornerRadius = 29
         cell.profilePicImageView.layer.masksToBounds = true
         
+        let timeStamp = NSDate()
+        let timeformat: String
         
         if let postedPic = userPosts[indexPath.row]["image"] as? PFFile {
             
@@ -135,8 +136,7 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
             }
             
         }
-        
-        view.layer.masksToBounds = true
+
         
         return cell
     }

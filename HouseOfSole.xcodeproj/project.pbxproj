@@ -31,6 +31,7 @@
 		04CEB01D1B588A1700CDAC97 /* homeIcon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CEB01C1B588A1700CDAC97 /* homeIcon copy.png */; };
 		04D406541B50132000017FD0 /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D406531B50132000017FD0 /* BioViewController.swift */; };
 		04D406551B50440600017FD0 /* Colleged.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B6586C1B4F73E30086F741 /* Colleged.ttf */; };
+		04D525E01B5968AA0054781E /* EditBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D525DF1B5968AA0054781E /* EditBioViewController.swift */; };
 		04E1F75D1B5802EA0067E9F3 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E1F75C1B5802EA0067E9F3 /* heart.png */; };
 		04E1F7611B5807E40067E9F3 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E1F7601B5807E40067E9F3 /* comment.png */; };
 		04E511B21B44310B00A16B21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E511B11B44310B00A16B21 /* AppDelegate.swift */; };
@@ -88,6 +89,7 @@
 		04CEB0161B5887B700CDAC97 /* userIconcopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userIconcopy.png; sourceTree = "<group>"; };
 		04CEB01C1B588A1700CDAC97 /* homeIcon copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeIcon copy.png"; sourceTree = "<group>"; };
 		04D406531B50132000017FD0 /* BioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
+		04D525DF1B5968AA0054781E /* EditBioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBioViewController.swift; sourceTree = "<group>"; };
 		04E1F75C1B5802EA0067E9F3 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		04E1F7601B5807E40067E9F3 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
 		04E511AC1B44310B00A16B21 /* HouseOfSole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HouseOfSole.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 				04469D3A1B460F9800C7E778 /* MainFeedTableViewController.swift */,
 				04469D3E1B46D72F00C7E778 /* MainFeedTableViewCell.swift */,
 				04D406531B50132000017FD0 /* BioViewController.swift */,
+				04D525DF1B5968AA0054781E /* EditBioViewController.swift */,
 				04469D3C1B46C3C900C7E778 /* PostPicViewController.swift */,
 			);
 			name = MainFeed;
@@ -380,6 +383,7 @@
 				04E511B21B44310B00A16B21 /* AppDelegate.swift in Sources */,
 				04469D3D1B46C3C900C7E778 /* PostPicViewController.swift in Sources */,
 				04B658691B4F2D8F0086F741 /* PrettyButton.swift in Sources */,
+				04D525E01B5968AA0054781E /* EditBioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

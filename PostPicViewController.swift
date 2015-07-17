@@ -40,7 +40,7 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
-    // will keep from presenting after pic has been taken
+//     will keep from presenting after pic has been taken
     var posted = false
     
     override func viewWillAppear(animated: Bool) {
@@ -53,7 +53,7 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         
         presentViewController(imagePicker, animated: true, completion: nil)
-    
+
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
@@ -63,7 +63,7 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
             let newImage = RBResizeImage(image, CGSizeMake(400, 550))
             myImageView.image = image
             
-            self.posted = true
+//            self.posted = true
             
             picker.dismissViewControllerAnimated(true, completion: nil)
             
@@ -90,14 +90,15 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
-
+        
+         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         
         println(self.tabBarController?.viewControllers)
         
         if let tabBarControl = self.tabBarController?.viewControllers {
             if let firstVC = tabBarControl[0] as? MainFeedTableViewController {
                 tabBarController?.selectedIndex = 0
+                
             }
         }
         

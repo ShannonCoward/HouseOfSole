@@ -361,6 +361,7 @@
                                 </state>
                                 <connections>
                                     <action selector="editProfileButton:" destination="l2s-IA-6Pb" eventType="touchUpInside" id="a9I-wy-X82"/>
+                                    <segue destination="uCi-XI-it8" kind="presentation" id="Ces-vE-RJB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -390,6 +391,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5E7-JH-oS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4462" y="1246"/>
+        </scene>
+        <!--Edit Bio View Controller-->
+        <scene sceneID="p13-9U-mk2">
+            <objects>
+                <viewController storyboardIdentifier="editBioVC" id="uCi-XI-it8" customClass="EditBioViewController" customModule="HouseOfSole" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P5i-uz-2Nb"/>
+                        <viewControllerLayoutGuide type="bottom" id="WEq-si-1ir"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ic-cx-jyj">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TOh-3m-Syh">
+                                <rect key="frame" x="16" y="20" width="67" height="64"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dp-0t-i3K">
+                                <rect key="frame" x="16" y="92" width="81" height="30"/>
+                                <state key="normal" title="Edit Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="editProfilePicture:" destination="uCi-XI-it8" eventType="touchUpInside" id="XoS-7h-df2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="700"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Yk-lc-y40" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4462" y="2076"/>
         </scene>
         <!--House Of Sole-->
         <scene sceneID="RJC-UF-zAI">

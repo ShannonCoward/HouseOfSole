@@ -28,6 +28,17 @@ class BioViewController: UIViewController {
         
     }
     
+    @IBAction func saveProfile(sender: UIButton) {
+        
+        let image = UIImage()
+        
+        
+        let file = PFFile(data: UIImagePNGRepresentation(image))
+        PFUser.currentUser()?.setValue(file, forKey: "image")
+        PFUser.currentUser()?.saveInBackground()
+        
+    }
+    
     @IBAction func logOutButton(sender: UIButton) {
         
         PFUser.logOut()
