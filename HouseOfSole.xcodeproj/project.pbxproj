@@ -25,6 +25,10 @@
 		04B658691B4F2D8F0086F741 /* PrettyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B658681B4F2D8F0086F741 /* PrettyButton.swift */; };
 		04B6586B1B4F724F0086F741 /* OriginalJs.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B6586A1B4F724F0086F741 /* OriginalJs.png */; };
 		04B6586E1B4F8B6F0086F741 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6586D1B4F8B6F0086F741 /* FirstViewController.swift */; };
+		04CEAFD11B581CF500CDAC97 /* thinkDifferent.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CEAFD01B581CF500CDAC97 /* thinkDifferent.png */; };
+		04CEB0111B587B3100CDAC97 /* cameraIcon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CEB0101B587B3100CDAC97 /* cameraIcon copy.png */; };
+		04CEB0171B5887B700CDAC97 /* userIconcopy.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CEB0161B5887B700CDAC97 /* userIconcopy.png */; };
+		04CEB01D1B588A1700CDAC97 /* homeIcon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CEB01C1B588A1700CDAC97 /* homeIcon copy.png */; };
 		04D406541B50132000017FD0 /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D406531B50132000017FD0 /* BioViewController.swift */; };
 		04D406551B50440600017FD0 /* Colleged.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B6586C1B4F73E30086F741 /* Colleged.ttf */; };
 		04E1F75D1B5802EA0067E9F3 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E1F75C1B5802EA0067E9F3 /* heart.png */; };
@@ -79,6 +83,10 @@
 		04B6586A1B4F724F0086F741 /* OriginalJs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OriginalJs.png; sourceTree = "<group>"; };
 		04B6586C1B4F73E30086F741 /* Colleged.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Colleged.ttf; sourceTree = "<group>"; };
 		04B6586D1B4F8B6F0086F741 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = ../FirstViewController.swift; sourceTree = "<group>"; };
+		04CEAFD01B581CF500CDAC97 /* thinkDifferent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thinkDifferent.png; sourceTree = "<group>"; };
+		04CEB0101B587B3100CDAC97 /* cameraIcon copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraIcon copy.png"; sourceTree = "<group>"; };
+		04CEB0161B5887B700CDAC97 /* userIconcopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userIconcopy.png; sourceTree = "<group>"; };
+		04CEB01C1B588A1700CDAC97 /* homeIcon copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeIcon copy.png"; sourceTree = "<group>"; };
 		04D406531B50132000017FD0 /* BioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
 		04E1F75C1B5802EA0067E9F3 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		04E1F7601B5807E40067E9F3 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
@@ -211,11 +219,15 @@
 				04E511C61B44310B00A16B21 /* Info.plist */,
 				0457E2581B45011E009EFA90 /* Bridging-Header.h */,
 				04B6586A1B4F724F0086F741 /* OriginalJs.png */,
+				04CEB0101B587B3100CDAC97 /* cameraIcon copy.png */,
 				04B658681B4F2D8F0086F741 /* PrettyButton.swift */,
 				04E1F7601B5807E40067E9F3 /* comment.png */,
+				04CEB01C1B588A1700CDAC97 /* homeIcon copy.png */,
+				04CEB0161B5887B700CDAC97 /* userIconcopy.png */,
 				044283411B4DC107001AB059 /* ImageManipulation.swift */,
 				04E1F75C1B5802EA0067E9F3 /* heart.png */,
 				04B6586C1B4F73E30086F741 /* Colleged.ttf */,
+				04CEAFD01B581CF500CDAC97 /* thinkDifferent.png */,
 				04469D421B46D9AE00C7E778 /* me2.jpg */,
 				04469D441B46DA5F00C7E778 /* mySpaceDunk.png */,
 				04E511B11B44310B00A16B21 /* AppDelegate.swift */,
@@ -332,9 +344,13 @@
 				04E511B71B44310B00A16B21 /* Main.storyboard in Resources */,
 				04B6586B1B4F724F0086F741 /* OriginalJs.png in Resources */,
 				04E511BC1B44310B00A16B21 /* LaunchScreen.xib in Resources */,
+				04CEAFD11B581CF500CDAC97 /* thinkDifferent.png in Resources */,
 				04E1F7611B5807E40067E9F3 /* comment.png in Resources */,
+				04CEB0111B587B3100CDAC97 /* cameraIcon copy.png in Resources */,
 				04469D451B46DA5F00C7E778 /* mySpaceDunk.png in Resources */,
 				04469D431B46D9AE00C7E778 /* me2.jpg in Resources */,
+				04CEB01D1B588A1700CDAC97 /* homeIcon copy.png in Resources */,
+				04CEB0171B5887B700CDAC97 /* userIconcopy.png in Resources */,
 				04E511B91B44310B00A16B21 /* Images.xcassets in Resources */,
 				04D406551B50440600017FD0 /* Colleged.ttf in Resources */,
 			);

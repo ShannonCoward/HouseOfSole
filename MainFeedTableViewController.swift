@@ -18,11 +18,15 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+
 
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+            var navigationBar = UINavigationBar.self
+        
+        
         
         println(PFUser.currentUser()?.email)
         
