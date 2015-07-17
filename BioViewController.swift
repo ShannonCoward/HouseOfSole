@@ -10,15 +10,22 @@ import UIKit
 import Parse
 
 class BioViewController: UIViewController {
+    
+    @IBOutlet weak var userBioPic: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Colleged", size: 20)!]
+        
+        userBioPic.layer.cornerRadius = 29
+        userBioPic.layer.masksToBounds = true
     }
     
     
     @IBAction func editProfileButton(sender: UIButton) {
+        
     }
     
     @IBAction func logOutButton(sender: UIButton) {
@@ -26,8 +33,6 @@ class BioViewController: UIViewController {
         PFUser.logOut()
         
         if PFUser.currentUser()?.email == nil {
-            
-            
             
             let firstVC = storyboard?.instantiateViewControllerWithIdentifier("firstVC") as! FirstViewController
             
