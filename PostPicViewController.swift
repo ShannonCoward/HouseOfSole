@@ -16,17 +16,11 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     var imagePicker = UIImagePickerController()
     
-    //    var tabBarPicker = UITabBarControllerDelegate.self
-    
     var myImageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        optional func tabBarController(_ tabBarController: UITabBarController,
-        //            shouldSelectViewController viewController: UIViewController) -> Bool
-        
-        
+
         
         imagePicker.sourceType = .Camera
         imagePicker.delegate = self
@@ -42,9 +36,9 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
     
 //     will keep from presenting after pic has been taken
     var posted = false
-    
+
     override func viewWillAppear(animated: Bool) {
-        
+
         if posted {
             
             posted = false
@@ -63,7 +57,7 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
             let newImage = RBResizeImage(image, CGSizeMake(400, 550))
             myImageView.image = image
             
-//            self.posted = true
+            self.posted = true
             
             picker.dismissViewControllerAnimated(true, completion: nil)
             
@@ -101,10 +95,6 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
                 
             }
         }
-        
-        
-//        tabBarController?.presentViewController(homeFeedVC, animated: false, completion: nil)
-        
         
         
     }

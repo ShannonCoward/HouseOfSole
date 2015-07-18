@@ -9,13 +9,16 @@
 import UIKit
 import Parse
 
-class BioViewController: UIViewController {
+class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate {
     
     @IBOutlet weak var userBioPic: UIImageView!
-    
+    var imagePicker = UIImagePickerController()
+    var myImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self
 
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Colleged", size: 20)!]
         
@@ -26,7 +29,60 @@ class BioViewController: UIViewController {
     
     @IBAction func editProfileButton(sender: UIButton) {
         
+        UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.sourceType = .PhotoLibrary
+        imagePicker.delegate = self
+        
+        myImageView.contentMode = .ScaleAspectFit
+        myImageView.frame = view.frame
+        myImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        view.addSubview(myImageView)
+        
+        tabBarController?.hidesBottomBarWhenPushed
+        
+        self.view.addSubview(imagePicker.view)
+        
     }
+    
+    
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            myImageView.contentMode = .ScaleAspectFit
+            myImageView.image = pickedImage
+            
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        
+        
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        
+        println(self.tabBarController?.viewControllers)
+        
+        if let tabBarControl = self.tabBarController?.viewControllers {
+            if let firstVC = tabBarControl[2] as? MainFeedTableViewController {
+                tabBarController?.selectedIndex = 0
+                
+            }
+        }
+        
+        
+    }
+    
+    
+//    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+//        
+//        dismissViewControllerAnimated(true, completion: nil)
+//        
+//    }
+    
     
     @IBAction func saveProfile(sender: UIButton) {
         
@@ -39,6 +95,8 @@ class BioViewController: UIViewController {
         
     }
     
+    
+
     @IBAction func logOutButton(sender: UIButton) {
         
         PFUser.logOut()
