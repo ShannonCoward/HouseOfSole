@@ -21,11 +21,9 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        imagePicker.sourceType = .Camera
         imagePicker.delegate = self
-        
-        
+        imagePicker.sourceType = .Camera
+       
         myImageView.frame = view.frame
         myImageView.contentMode = UIViewContentMode.ScaleAspectFill
         view.addSubview(myImageView)

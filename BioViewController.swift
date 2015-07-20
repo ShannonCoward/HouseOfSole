@@ -30,8 +30,9 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBAction func editProfileButton(sender: UIButton) {
         
         UIImagePickerControllerSourceType.PhotoLibrary
-        imagePicker.sourceType = .PhotoLibrary
         imagePicker.delegate = self
+        imagePicker.sourceType = .PhotoLibrary
+       self.presentViewController(imagePicker, animated: true, completion: nil)
         
         myImageView.contentMode = .ScaleAspectFit
         myImageView.frame = view.frame
@@ -48,10 +49,17 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
+        let theINfo:NSDictionary = info as NSDictionary
+        
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-            myImageView.contentMode = .ScaleAspectFit
-            myImageView.image = pickedImage
+            println(pickedImage)
+            userBioPic.contentMode = .ScaleAspectFit
+            userBioPic.image = pickedImage
+        
+           
+           self.imagePicker.dismissViewControllerAnimated(true, completion: nil)
+            
             
         }
         
@@ -67,7 +75,7 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         println(self.tabBarController?.viewControllers)
         
         if let tabBarControl = self.tabBarController?.viewControllers {
-            if let firstVC = tabBarControl[2] as? MainFeedTableViewController {
+            if let bioVC = tabBarControl[2] as? BioViewController {
                 tabBarController?.selectedIndex = 0
                 
             }
