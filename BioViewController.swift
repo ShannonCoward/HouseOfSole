@@ -14,12 +14,12 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var userBioPic: UIImageView!
     var imagePicker = UIImagePickerController()
     var myImageView = UIImageView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
-
+        
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Colleged", size: 20)!]
         
         userBioPic.layer.cornerRadius = 29
@@ -32,7 +32,7 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         UIImagePickerControllerSourceType.PhotoLibrary
         imagePicker.delegate = self
         imagePicker.sourceType = .PhotoLibrary
-       self.presentViewController(imagePicker, animated: true, completion: nil)
+        self.presentViewController(imagePicker, animated: true, completion: nil)
         
         myImageView.contentMode = .ScaleAspectFit
         myImageView.frame = view.frame
@@ -56,16 +56,22 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             println(pickedImage)
             userBioPic.contentMode = .ScaleAspectFit
             userBioPic.image = pickedImage
-        
-           
-           self.imagePicker.dismissViewControllerAnimated(true, completion: nil)
             
+            let file = PFFile(data: UIImagePNGRepresentation(pickedImage))
+            PFUser.currentUser()?.setObject(file, forKey: "image")
+            PFUser.currentUser()?.saveInBackground()
+            
+            
+            // add post to userPosts
+            
+            
+            
+            dismissViewControllerAnimated(true, completion: nil)
             
         }
+     
         
-        dismissViewControllerAnimated(true, completion: nil)
     }
-    
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         
@@ -85,26 +91,7 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     
-//    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-//        
-//        dismissViewControllerAnimated(true, completion: nil)
-//        
-//    }
     
-    
-    @IBAction func saveProfile(sender: UIButton) {
-        
-        let image = UIImage()
-        
-        
-        let file = PFFile(data: UIImagePNGRepresentation(image))
-        PFUser.currentUser()?.setValue(file, forKey: "image")
-        PFUser.currentUser()?.saveInBackground()
-        
-    }
-    
-    
-
     @IBAction func logOutButton(sender: UIButton) {
         
         PFUser.logOut()
@@ -114,27 +101,27 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             let firstVC = storyboard?.instantiateViewControllerWithIdentifier("firstVC") as! FirstViewController
             
             presentViewController(firstVC, animated: true, completion: nil)
-    
-                println("\(PFUser.currentUser())loggedOUt")
-        
+            
+            println("\(PFUser.currentUser())loggedOUt")
+            
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

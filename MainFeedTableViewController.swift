@@ -22,7 +22,6 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Colleged", size: 20)!]
         
         
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -40,6 +39,7 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
         }
         
         var query = PFQuery(className:"Posts")
+        query.includeKey("uploader")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             
@@ -50,7 +50,7 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
                 if let objects = objects as? [PFObject] {
                     
                     self.userPosts = objects
-                    self.tableView.reloadData()
+//                    self.tableView.reloadData()
                     
                 }
                 
@@ -59,11 +59,30 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
                 println("Error: \(error!) \(error!.userInfo!)")
             }
         }
-        
-        
+     
+//        var bioPicQuery = PFQuery(className: "User")
+//        query.whereKey("user", containsString: "image")
+//        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?,error: NSError?) -> Void in
+//            
+//            if error == nil {
+//            
+//                if let objects = objects as? [PFObject] {
+//                
+//                        self.userPosts = objects
+//                
+//                    println("this is\(bioPic)")
+//
+//                    
+//                    
+//                }
+//            
+//            }
+//            
+//        }
         
         self.tableView.reloadData()
     }
+
     
     
     override func viewWillDisappear(animated: Bool) {
@@ -78,13 +97,7 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
-    
-    //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    //        // #warning Potentially incomplete method implementation.
-    //        // Return the number of sections.
-    //        return 0
-    //    }
+
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
@@ -97,11 +110,38 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
         
         let cell = tableView.dequeueReusableCellWithIdentifier("mainFeedCell", forIndexPath: indexPath) as! MainFeedTableViewCell
         
+       
+        
         cell.profilePicImageView.layer.cornerRadius = 29
         cell.profilePicImageView.layer.masksToBounds = true
         
         let timeStamp = NSDate()
         let timeformat: String
+        
+        if let user = userPosts[indexPath.row]["uploader"] as? PFUser {
+            
+            println(user)
+            
+            cell.usernameLabel.text = user.username
+            
+            if let avatar = user["image"] as? PFFile {
+                
+                avatar.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                    
+                    if let image = UIImage(data: data!) {
+                        
+                        cell.profilePicImageView.image = image
+                        
+                        cell.profilePicImageView.layer.cornerRadius = 10
+                        cell.profilePicImageView.layer.masksToBounds = true
+                        
+                    }
+                    
+                })
+                
+            }
+            
+        }
         
         if let postedPic = userPosts[indexPath.row]["image"] as? PFFile {
             
@@ -116,25 +156,11 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
                     cell.postedPicImageView.layer.cornerRadius = 10
                     cell.postedPicImageView.layer.masksToBounds = true
                     
-                    
                 }
+          
                 
             })
-            
-            
-            if let postUser = self.userPosts[indexPath.row]["uploader"] as? PFUser {
-                
-                postUser.fetchInBackgroundWithBlock({ (PFObject, NSError) -> Void in
-                    
-                    println("Post User 1 \(postUser)")
-                    println(postUser.username)
-                    cell.usernameLabel.text = postUser.username
-                    
-                    
-                })
-                
-            }
-            
+      
         }
 
         
@@ -160,30 +186,6 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
         }
     }
     
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
+ 
     
 }

@@ -153,9 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				04469D3A1B460F9800C7E778 /* MainFeedTableViewController.swift */,
-				04469D3E1B46D72F00C7E778 /* MainFeedTableViewCell.swift */,
 				04D406531B50132000017FD0 /* BioViewController.swift */,
 				04469D3C1B46C3C900C7E778 /* PostPicViewController.swift */,
+				04469D3E1B46D72F00C7E778 /* MainFeedTableViewCell.swift */,
 			);
 			name = MainFeed;
 			sourceTree = "<group>";
