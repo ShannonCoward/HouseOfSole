@@ -12,6 +12,8 @@ import Parse
 class MainFeedTableViewCell: UITableViewCell {
     
 
+    @IBOutlet weak var likesLabel: UILabel!
+    
     @IBOutlet weak var profilePicImageView: UIImageView!
     
     @IBOutlet weak var postedPicImageView: UIImageView!
@@ -19,10 +21,7 @@ class MainFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var postsTimeStampLabel: UILabel!
-    
-    @IBAction func likesButton(sender: UIButton) {
-        
-    }
+
 
     
     @IBOutlet weak var commentButton: UIButton!
@@ -35,6 +34,10 @@ class MainFeedTableViewCell: UITableViewCell {
         
 }
     
+    
+    @IBAction func likesButton(sender: UIButton) {
+        
+    }
     
 
     override func setSelected(selected: Bool, animated: Bool) {

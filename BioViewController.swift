@@ -24,7 +24,12 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         userBioPic.layer.cornerRadius = 29
         userBioPic.layer.masksToBounds = true
+        
+        
+        var user = PFUser.currentUser()
+        
     }
+
     
     
     @IBAction func editProfileButton(sender: UIButton) {

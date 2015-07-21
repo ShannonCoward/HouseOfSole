@@ -57,7 +57,6 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             self.posted = true
             
-            picker.dismissViewControllerAnimated(true, completion: nil)
             
             var post = PFObject(className: "Posts")
             post["uploader"] = PFUser.currentUser()
@@ -72,6 +71,7 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             post.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
                 
+            picker.dismissViewControllerAnimated(true, completion: nil)
                 
                 
             })
@@ -82,8 +82,9 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         
-        
-         imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        posted = true
+
+         picker.dismissViewControllerAnimated(true, completion: nil)
         
         println(self.tabBarController?.viewControllers)
         

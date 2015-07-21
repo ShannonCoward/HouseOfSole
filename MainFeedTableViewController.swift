@@ -13,6 +13,8 @@ import Parse
 
 class MainFeedTableViewController: UITableViewController,UITabBarControllerDelegate, UITableViewDataSource {
     
+    
+    
     var userPosts: [PFObject] = []
     
     
@@ -50,7 +52,7 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
                 if let objects = objects as? [PFObject] {
                     
                     self.userPosts = objects
-//                    self.tableView.reloadData()
+                   self.tableView.reloadData()
                     
                 }
                 
@@ -59,26 +61,7 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
                 println("Error: \(error!) \(error!.userInfo!)")
             }
         }
-     
-//        var bioPicQuery = PFQuery(className: "User")
-//        query.whereKey("user", containsString: "image")
-//        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?,error: NSError?) -> Void in
-//            
-//            if error == nil {
-//            
-//                if let objects = objects as? [PFObject] {
-//                
-//                        self.userPosts = objects
-//                
-//                    println("this is\(bioPic)")
-//
-//                    
-//                    
-//                }
-//            
-//            }
-//            
-//        }
+
         
         self.tableView.reloadData()
     }
