@@ -11,6 +11,8 @@ import Parse
 
 class MainFeedTableViewCell: UITableViewCell {
     
+    var parseObject:PFObject?
+    
 
     @IBOutlet weak var likesLabel: UILabel!
     
@@ -22,28 +24,36 @@ class MainFeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postsTimeStampLabel: UILabel!
 
-
-    
     @IBOutlet weak var commentButton: UIButton!
     
 
-   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
 }
+
     
     
     @IBAction func likesButton(sender: UIButton) {
-        
+
+        if(parseObject != nil) {
+            if var likes:Int? = parseObject!.objectForKey("likes") as? Int {
+                likes!++
+                
+                parseObject!.setObject(likes!, forKey: "likes");
+                parseObject!.saveInBackground();
+                println("This object\(parseObject)") 
+                likesLabel?.text = "\(likes!) votes";
+            }
+        }
+       
     }
+            
     
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-    
     }
 
 }

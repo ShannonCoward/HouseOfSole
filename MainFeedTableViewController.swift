@@ -62,7 +62,6 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
             }
         }
 
-        
         self.tableView.reloadData()
     }
 
@@ -93,7 +92,6 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
         
         let cell = tableView.dequeueReusableCellWithIdentifier("mainFeedCell", forIndexPath: indexPath) as! MainFeedTableViewCell
         
-       
         
         cell.profilePicImageView.layer.cornerRadius = 29
         cell.profilePicImageView.layer.masksToBounds = true
@@ -144,9 +142,26 @@ class MainFeedTableViewController: UITableViewController,UITabBarControllerDeleg
                 
             })
       
+         
         }
-
         
+//        if let likes = userPosts[indexPath.row]["likes"] as? PFObject {
+//    
+//            
+//            likes.fetchIfNeededInBackgroundWithBlock({ (PFObject, NSError) -> Void in
+//            
+//                if let likes = UIButton(likes){
+//                if likes == 0 {
+//                    likes = ++1
+//                }
+//                cell.likesLabel.text = "\(likes) likes"
+//                    
+//                }
+//            })
+//            
+//            
+//            }
+    
         return cell
     }
     

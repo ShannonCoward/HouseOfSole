@@ -12,7 +12,6 @@ import Bolts
 
 class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate {
     
-    
 
     var imagePicker = UIImagePickerController()
     
@@ -57,7 +56,6 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             self.posted = true
             
-            
             var post = PFObject(className: "Posts")
             post["uploader"] = PFUser.currentUser()
             
@@ -67,11 +65,9 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             // add post to userPosts
             
-           
-            
             post.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
                 
-            picker.dismissViewControllerAnimated(true, completion: nil)
+                picker.dismissViewControllerAnimated(true, completion: nil)
                 
                 
             })

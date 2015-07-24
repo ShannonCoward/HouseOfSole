@@ -11,6 +11,8 @@ import Parse
 
 class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate {
     
+    var user = PFUser.currentUser()
+    
     @IBOutlet weak var userBioPic: UIImageView!
     var imagePicker = UIImagePickerController()
     var myImageView = UIImageView()
@@ -25,13 +27,10 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         userBioPic.layer.cornerRadius = 29
         userBioPic.layer.masksToBounds = true
         
-        
         var user = PFUser.currentUser()
         
     }
 
-    
-    
     @IBAction func editProfileButton(sender: UIButton) {
         
         UIImagePickerControllerSourceType.PhotoLibrary
@@ -50,8 +49,6 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
     }
     
-    
-    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
         let theINfo:NSDictionary = info as NSDictionary
@@ -66,20 +63,14 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             PFUser.currentUser()?.setObject(file, forKey: "image")
             PFUser.currentUser()?.saveInBackground()
             
-            
             // add post to userPosts
-            
-            
-            
             dismissViewControllerAnimated(true, completion: nil)
             
         }
      
-        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        
         
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         

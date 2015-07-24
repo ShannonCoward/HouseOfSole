@@ -25,8 +25,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate { //FBSDKLoginB
         passwordTextField.delegate = self
         
     }
-
-    
     
     @IBAction func loginButton(sender: UIButton) {
         

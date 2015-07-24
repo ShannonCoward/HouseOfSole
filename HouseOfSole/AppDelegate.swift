@@ -22,9 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Sets The Navigation Bar Color
         var navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = UIColor.blackColor()
+        navigationBarAppearace.barTintColor = UIColor.orangeColor()
         
-        navigationBarAppearace.tintColor = UIColor.redColor()
-        navigationBarAppearace.barTintColor = UIColor(red:0.07, green:0.62, blue:0.84, alpha:1)
+        var tabBarAppearance = UITabBar.appearance()
+        tabBarAppearance.tintColor = UIColor.orangeColor()
+        tabBarAppearance.barTintColor = UIColor.blackColor()
+        
         
         //Sets the Text
         

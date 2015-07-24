@@ -21,6 +21,8 @@
 		0457E24D1B44E139009EFA90 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0457E24A1B44E139009EFA90 /* FBSDKShareKit.framework */; };
 		0457E2501B44E4F5009EFA90 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0457E24E1B44E4F5009EFA90 /* Bolts.framework */; };
 		0457E2511B44E4F5009EFA90 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0457E24F1B44E4F5009EFA90 /* Parse.framework */; };
+		047C7DA11B6082EF00F26F3A /* profilepicplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 047C7DA01B6082EF00F26F3A /* profilepicplaceholder.png */; };
+		04952AD71B625C5700FBA69B /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04952AD61B625C5700FBA69B /* CommentsViewController.swift */; };
 		04B658671B4F2A7C0086F741 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B658661B4F2A7C0086F741 /* SignUpViewController.swift */; };
 		04B658691B4F2D8F0086F741 /* PrettyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B658681B4F2D8F0086F741 /* PrettyButton.swift */; };
 		04B6586B1B4F724F0086F741 /* OriginalJs.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B6586A1B4F724F0086F741 /* OriginalJs.png */; };
@@ -78,6 +80,8 @@
 		0457E24E1B44E4F5009EFA90 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		0457E24F1B44E4F5009EFA90 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		0457E2581B45011E009EFA90 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../HouseOfSole/Bridging-Header.h"; sourceTree = "<group>"; };
+		047C7DA01B6082EF00F26F3A /* profilepicplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profilepicplaceholder.png; sourceTree = "<group>"; };
+		04952AD61B625C5700FBA69B /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		04B658661B4F2A7C0086F741 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		04B658681B4F2D8F0086F741 /* PrettyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrettyButton.swift; sourceTree = "<group>"; };
 		04B6586A1B4F724F0086F741 /* OriginalJs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OriginalJs.png; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				04469D3A1B460F9800C7E778 /* MainFeedTableViewController.swift */,
+				04952AD61B625C5700FBA69B /* CommentsViewController.swift */,
 				04D406531B50132000017FD0 /* BioViewController.swift */,
 				04469D3C1B46C3C900C7E778 /* PostPicViewController.swift */,
 				04469D3E1B46D72F00C7E778 /* MainFeedTableViewCell.swift */,
@@ -216,6 +221,8 @@
 		04E511C51B44310B00A16B21 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04E511B11B44310B00A16B21 /* AppDelegate.swift */,
+				047C7DA01B6082EF00F26F3A /* profilepicplaceholder.png */,
 				04E511C61B44310B00A16B21 /* Info.plist */,
 				0457E2581B45011E009EFA90 /* Bridging-Header.h */,
 				04B6586A1B4F724F0086F741 /* OriginalJs.png */,
@@ -230,7 +237,6 @@
 				04CEAFD01B581CF500CDAC97 /* thinkDifferent.png */,
 				04469D421B46D9AE00C7E778 /* me2.jpg */,
 				04469D441B46DA5F00C7E778 /* mySpaceDunk.png */,
-				04E511B11B44310B00A16B21 /* AppDelegate.swift */,
 				04E511B81B44310B00A16B21 /* Images.xcassets */,
 				04E511BA1B44310B00A16B21 /* LaunchScreen.xib */,
 			);
@@ -350,6 +356,7 @@
 				04469D451B46DA5F00C7E778 /* mySpaceDunk.png in Resources */,
 				04469D431B46D9AE00C7E778 /* me2.jpg in Resources */,
 				04CEB01D1B588A1700CDAC97 /* homeIcon copy.png in Resources */,
+				047C7DA11B6082EF00F26F3A /* profilepicplaceholder.png in Resources */,
 				04CEB0171B5887B700CDAC97 /* userIconcopy.png in Resources */,
 				04E511B91B44310B00A16B21 /* Images.xcassets in Resources */,
 				04D406551B50440600017FD0 /* Colleged.ttf in Resources */,
@@ -372,6 +379,7 @@
 			files = (
 				04E511B41B44310B00A16B21 /* LoginViewController.swift in Sources */,
 				044283421B4DC107001AB059 /* ImageManipulation.swift in Sources */,
+				04952AD71B625C5700FBA69B /* CommentsViewController.swift in Sources */,
 				04B658671B4F2A7C0086F741 /* SignUpViewController.swift in Sources */,
 				04D406541B50132000017FD0 /* BioViewController.swift in Sources */,
 				04469D3F1B46D72F00C7E778 /* MainFeedTableViewCell.swift in Sources */,
