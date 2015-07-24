@@ -11,7 +11,6 @@ import Parse
 
 class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate {
     
-    var user = PFUser.currentUser()
     
     @IBOutlet weak var userBioPic: UIImageView!
     var imagePicker = UIImagePickerController()
@@ -63,7 +62,6 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             PFUser.currentUser()?.setObject(file, forKey: "image")
             PFUser.currentUser()?.saveInBackground()
             
-            // add post to userPosts
             dismissViewControllerAnimated(true, completion: nil)
             
         }
@@ -79,6 +77,7 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         if let tabBarControl = self.tabBarController?.viewControllers {
             if let bioVC = tabBarControl[2] as? BioViewController {
                 tabBarController?.selectedIndex = 0
+                
                 
             }
         }
