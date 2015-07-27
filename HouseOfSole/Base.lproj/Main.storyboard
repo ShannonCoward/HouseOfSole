@@ -335,7 +335,6 @@
         <!--User Bio-->
         <scene sceneID="dj1-FC-XBg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5E7-JH-oS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="bioVC" id="l2s-IA-6Pb" customClass="BioViewController" customModule="HouseOfSole" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q0e-mM-iGd"/>
@@ -405,6 +404,7 @@
                         <outlet property="userBioPic" destination="FJu-gG-nVZ" id="sbb-wv-7PN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5E7-JH-oS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4308" y="1236"/>
         </scene>
