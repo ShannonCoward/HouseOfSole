@@ -42,7 +42,7 @@ class MainFeedTableViewCell: UITableViewCell {
                 
                 parseObject!.setObject(likes!, forKey: "likes");
                 parseObject!.saveInBackground();
-                println("This object\(parseObject)") 
+                print("This object\(parseObject)") 
                 likesLabel?.text = "\(likes!) votes";
             }
         }

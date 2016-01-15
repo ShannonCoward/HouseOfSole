@@ -26,7 +26,7 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         userBioPic.layer.cornerRadius = 29
         userBioPic.layer.masksToBounds = true
         
-        var user = PFUser.currentUser()
+        _ = PFUser.currentUser()
         
     }
 
@@ -54,11 +54,11 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-            println(pickedImage)
+            print(pickedImage)
             userBioPic.contentMode = .ScaleAspectFit
             userBioPic.image = pickedImage
             
-            let file = PFFile(data: UIImagePNGRepresentation(pickedImage))
+            let file = PFFile(data: UIImagePNGRepresentation(pickedImage)!)
             PFUser.currentUser()?.setObject(file, forKey: "image")
             PFUser.currentUser()?.saveInBackground()
             
@@ -72,7 +72,7 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         
-        println(self.tabBarController?.viewControllers)
+        print(self.tabBarController?.viewControllers)
         
         if let tabBarControl = self.tabBarController?.viewControllers {
             if let bioVC = tabBarControl[2] as? BioViewController {
@@ -97,7 +97,7 @@ class BioViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             
             presentViewController(firstVC, animated: true, completion: nil)
             
-            println("\(PFUser.currentUser())loggedOUt")
+            print("\(PFUser.currentUser())loggedOUt")
             
         }
         

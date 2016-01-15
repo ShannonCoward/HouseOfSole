@@ -28,7 +28,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate { //FBSDKLoginB
     
     @IBAction func loginButton(sender: UIButton) {
         
-        PFUser.logInWithUsernameInBackground(usernameTextField.text, password:passwordTextField.text) {
+        PFUser.logInWithUsernameInBackground(usernameTextField.text!, password:passwordTextField.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 
