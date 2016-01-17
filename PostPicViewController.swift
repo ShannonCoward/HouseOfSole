@@ -47,11 +47,11 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-            let newImage = RBResizeImage(image, CGSizeMake(400, 550))
+            let newImage = RBResizeImage(image, targetSize: CGSizeMake(400, 550))
             myImageView.image = image
             
             self.posted = true
@@ -60,7 +60,7 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
             post["uploader"] = PFUser.currentUser()
             
             let imageData = UIImagePNGRepresentation(newImage)
-            let imageFile = PFFile(name:"image.png", data:imageData)
+            let imageFile = PFFile(name:"image.png", data:imageData!)
             post["image"] = imageFile
             
             // add post to userPosts
@@ -82,7 +82,7 @@ class PostPicViewController: UIViewController, UIImagePickerControllerDelegate, 
 
          picker.dismissViewControllerAnimated(true, completion: nil)
         
-        println(self.tabBarController?.viewControllers)
+        print(self.tabBarController?.viewControllers)
         
         if let tabBarControl = self.tabBarController?.viewControllers {
             if let firstVC = tabBarControl[0] as? MainFeedTableViewController {
